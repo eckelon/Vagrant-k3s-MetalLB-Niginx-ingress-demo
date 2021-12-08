@@ -1,0 +1,16 @@
+repositories:
+  - name: metallb
+    url: https://metallb.github.io/metallb
+  - name: ingress-nginx
+    url: https://kubernetes.github.io/ingress-nginx
+
+releases:
+  - name: metallb
+    namespace: metallb-system
+    chart: metallb/metallb
+    values:
+      - metallb.values.yaml
+
+  - name: ingress-nginx
+    namespace: ingress-nginx
+    chart: ingress-nginx/ingress-nginx
