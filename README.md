@@ -1,6 +1,6 @@
 # K3S + MetalLB + Ingress-Nginx Demo
 
-This is an automated way of deploying a K8s cluster ([k3s](https://k3s.io/)) in bare metal (Vagrant for this example) with an ingress controller ([Ingress-Nginx Controller](https://kubernetes.github.io/ingress-nginx/)) and a LoadBalancer ([MetalLB](https://metallb.org/)).
+This is an automated way of deploying a K8s cluster ([k3s](https://k3s.io/): 1 main node and 2 workers) in bare metal (Vagrant for this example) with an ingress controller ([Ingress-Nginx Controller](https://kubernetes.github.io/ingress-nginx/)) and a LoadBalancer ([MetalLB](https://metallb.org/)).
 
 ## Init the cluster
 
