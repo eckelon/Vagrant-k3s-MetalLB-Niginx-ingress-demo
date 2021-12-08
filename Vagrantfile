@@ -5,7 +5,7 @@
 Vagrant.configure("2") do |config|
 
   config.vm.define "main" do |main|
-    main.vm.box = "almalinux/8"
+    main.vm.box = "ubuntu/bionic64"
     main.vm.network "private_network", ip: "192.168.56.110"
     main.vm.provider "virtualbox" do |mainvm|
       mainvm.memory = 2048
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
   (1..2).each do |i|
     config.vm.define "worker#{i}" do |worker|
-      worker.vm.box = "almalinux/8"
+      worker.vm.box = "ubuntu/bionic64"
       worker.vm.network "private_network", ip: "192.168.56.11#{i}"
       worker.ssh.forward_agent = true
       worker.vm.provider "virtualbox" do |workervm|
