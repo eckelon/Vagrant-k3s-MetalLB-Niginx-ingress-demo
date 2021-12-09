@@ -26,9 +26,9 @@ k3sup install \
   --ssh-key=$MAIN_PRIVATE_KEY \
   --cluster \
   --k3s-channel=stable \
-  --k3s-extra-args "--no-deploy=traefik --no-deploy=servicelb --flannel-iface=enp0s8 --node-ip=$MAIN_IP" \
+  --k3s-extra-args "--no-deploy=traefik --no-deploy=servicelb --flannel-iface=enp0s8" \
   --merge \
-  --local-path $KUBECONFIG \
+  --local-path $KUBECONFIG
 
 echo "initializing worker nodes..."
 for i in {1..2}
@@ -40,11 +40,8 @@ k3sup join \
   --user=$USER \
   --ssh-key=$WORKER_PRIVATE_KEY \
   --sudo \
-  --k3s-channel=stable \
-  --server \
   --server-ip=$MAIN_IP \
-  --server-user=$USER \
-  --k3s-extra-args "--no-deploy=traefik --no-deploy=servicelb --flannel-iface=enp0s8 --node-ip=$WORKER_IP"
+  --k3s-extra-args "--flannel-iface=enp0s8"
 done
 
 echo "# Test your cluster with:"

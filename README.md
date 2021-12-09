@@ -28,8 +28,7 @@ helmfile sync
 ```
 
 ```
-./test.sh
+kubectl apply -f demo.yaml
 ```
 
 wait a minute and go to http://pruebas.net in your browser!
-
